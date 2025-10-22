@@ -1,4 +1,4 @@
-# Team50%--FALL2025-SQA
+# Team50%-FALL2025-SQA
 
 ### Team 50% Members:
 - ELizabeth Casey
