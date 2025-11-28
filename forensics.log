@@ -1,0 +1,48 @@
+2025-11-26 14:43:13,391 [INFO] [CALL] reportProp args=('PROPORTION_MODELZOO.csv',) kwargs={}
+2025-11-26 14:43:13,393 [ERROR] [EXCEPTION] reportProp raised FileNotFoundError: [Errno 2] No such file or directory: 'PROPORTION_MODELZOO.csv'
+Traceback (most recent call last):
+  File "C:\Users\avery\Desktop\comp6710\project\Team50--FALL2025-SQA\forensics.py", line 20, in inner
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avery\Desktop\comp6710\project\Team50--FALL2025-SQA\report.py", line 36, in reportProp
+    res_df = pd.read_csv(res_file)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avery\Desktop\comp6710\project\Team50--FALL2025-SQA\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avery\Desktop\comp6710\project\Team50--FALL2025-SQA\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avery\Desktop\comp6710\project\Team50--FALL2025-SQA\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avery\Desktop\comp6710\project\Team50--FALL2025-SQA\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\Users\avery\Desktop\comp6710\project\Team50--FALL2025-SQA\venv\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'PROPORTION_MODELZOO.csv'
+2025-11-26 14:49:40,826 [INFO] [CALL] reportProportion args=('demo_outputs\\dummy_results.csv', 'demo_outputs\\dummy_prop.csv') kwargs={}
+2025-11-26 14:49:40,883 [INFO] [RETURN] reportProportion result=None
+2025-11-26 14:49:40,883 [INFO] [CALL] reportEventDensity args=('demo_outputs\\dummy_results.csv', 'demo_outputs\\dummy_density.csv') kwargs={}
+2025-11-26 14:49:40,883 [ERROR] [EXCEPTION] reportEventDensity raised FileNotFoundError: [Errno 2] No such file or directory: np.str_('file1.py')
+Traceback (most recent call last):
+  File "C:\Users\avery\Desktop\comp6710\project\Team50--FALL2025-SQA\forensics.py", line 20, in inner
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avery\Desktop\comp6710\project\Team50--FALL2025-SQA\frequency.py", line 84, in reportEventDensity
+    all_py_size = getAllSLOC(repo_entity)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\avery\Desktop\comp6710\project\Team50--FALL2025-SQA\frequency.py", line 24, in getAllSLOC
+    total_sloc = total_sloc + sum(1 for _ in open(file_, encoding=csv_encoding))
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: np.str_('file1.py')
+2025-11-26 14:53:09,419 [INFO] [CALL] reportProportion args=('demo_outputs\\dummy_results.csv', 'demo_outputs\\dummy_prop.csv') kwargs={}
+2025-11-26 14:53:09,467 [INFO] [RETURN] reportProportion result=None
+2025-11-26 14:53:09,467 [INFO] [CALL] reportEventDensity args=('demo_outputs\\dummy_results.csv', 'demo_outputs\\dummy_density.csv') kwargs={}
+2025-11-26 14:53:09,558 [INFO] [RETURN] reportEventDensity result=None
+2025-11-26 14:53:09,558 [INFO] [CALL] reportProp args=('demo_outputs\\dummy_prop.csv',) kwargs={}
+2025-11-26 14:53:09,606 [INFO] [RETURN] reportProp result=None
+2025-11-26 14:53:09,606 [INFO] [CALL] reportDensity args=('demo_outputs\\dummy_density.csv',) kwargs={}
+2025-11-26 14:53:09,640 [INFO] [RETURN] reportDensity result=None

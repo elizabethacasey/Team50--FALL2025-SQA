@@ -1,0 +1,5 @@
+# ignore local environment + caches
+venv/
+__pycache__/
+.vscode/
+*.pyc
