@@ -47,12 +47,10 @@ I.  **fuzz.py Folder**
 > fuzzer script.
 
 ![: fuzz.py test output
-results](./reportfigures/media/image1.png){alt="A screenshot of a computer program AI-generated content may be incorrect."
-width="6.5in" height="3.4055555555555554in"}
+results](./reportfigures/media/image1.png)
 
 ![: test_fuzz.py test output
-results](./reportfigures/media/image2.png){alt="A computer screen with white and green text AI-generated content may be incorrect."
-width="6.5in" height="2.790277777777778in"}
+results](./reportfigures/media/image2.png)
 
 II. **Integrating Forensics**
 
@@ -88,12 +86,10 @@ and runs the forensics analysis on these dummy files. The results were
 stored in the demo_outputs file. Figure 4 shows the demo results.
 
 ![: forsenics.py logging output
-example](./reportfigures/media/image3.png){alt="A screenshot of a computer program AI-generated content may be incorrect."
-width="6.5in" height="2.3097222222222222in"}
+example](./reportfigures/media/image3.png)
 
 ![: Demo analysis
-results](./reportfigures/media/image4.png){width="6.5in"
-height="0.37916666666666665in"}
+results](./reportfigures/media/image4.png)
 
 III. **Continuous Integration**
 
@@ -122,5 +118,4 @@ file](./reportfigures/media/image5.png){width="6.5in"
 height="0.7243055555555555in"}
 
 ![: fuzz_report.txt
-example](./reportfigures/media/image6.png){alt="A screenshot of a computer AI-generated content may be incorrect."
-width="5.690475721784777in" height="2.314491469816273in"}
+example](./reportfigures/media/image6.png)
