@@ -1,0 +1,417 @@
+Fuzz Testing Report - Team 50
+Started: 2025-11-30 09:50:54
+Iterations per method: 50
+================================================================================
+
+
+================================================================================
+BUG #1 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: py_parser.getPythonParseObject
+Input: '/var/folders/14/0_2s0shn52s0m1xs9vgxthqw0000gn/T/tmpthd8w04f.py'
+Exception Type: ValueError
+Exception Message: source code string cannot contain null bytes
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 124, in fuzz_getPythonParseObject
+    result = py_parser.getPythonParseObject(test_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py", line 50, in parse
+    return compile(source, filename, mode, flags,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: source code string cannot contain null bytes
+
+================================================================================
+
+
+================================================================================
+BUG #2 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: py_parser.getPythonParseObject
+Input: '/var/folders/14/0_2s0shn52s0m1xs9vgxthqw0000gn/T/tmppyybcb7y.py'
+Exception Type: ValueError
+Exception Message: source code string cannot contain null bytes
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 124, in fuzz_getPythonParseObject
+    result = py_parser.getPythonParseObject(test_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py", line 50, in parse
+    return compile(source, filename, mode, flags,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: source code string cannot contain null bytes
+
+================================================================================
+
+
+================================================================================
+BUG #3 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: py_parser.getPythonParseObject
+Input: None
+Exception Type: TypeError
+Exception Message: expected str, bytes or os.PathLike object, not NoneType
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 124, in fuzz_getPythonParseObject
+    result = py_parser.getPythonParseObject(test_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+                       ^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+================================================================================
+
+
+================================================================================
+BUG #4 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: py_parser.getPythonParseObject
+Input: None
+Exception Type: TypeError
+Exception Message: expected str, bytes or os.PathLike object, not NoneType
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 124, in fuzz_getPythonParseObject
+    result = py_parser.getPythonParseObject(test_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+                       ^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+================================================================================
+
+
+================================================================================
+BUG #5 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: py_parser.getPythonParseObject
+Input: None
+Exception Type: TypeError
+Exception Message: expected str, bytes or os.PathLike object, not NoneType
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 124, in fuzz_getPythonParseObject
+    result = py_parser.getPythonParseObject(test_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+                       ^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+================================================================================
+
+
+================================================================================
+BUG #6 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: py_parser.getPythonAtrributeFuncs
+Input: '/var/folders/14/0_2s0shn52s0m1xs9vgxthqw0000gn/T/tmp8zeip7v0.py'
+Exception Type: ValueError
+Exception Message: source code string cannot contain null bytes
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 152, in fuzz_getPythonAttributeFuncs
+    py_tree = py_parser.getPythonParseObject(temp_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py", line 50, in parse
+    return compile(source, filename, mode, flags,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: source code string cannot contain null bytes
+
+================================================================================
+
+
+================================================================================
+BUG #7 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: py_parser.getPythonAtrributeFuncs
+Input: '/var/folders/14/0_2s0shn52s0m1xs9vgxthqw0000gn/T/tmpzdde1mmx.py'
+Exception Type: ValueError
+Exception Message: source code string cannot contain null bytes
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 152, in fuzz_getPythonAttributeFuncs
+    py_tree = py_parser.getPythonParseObject(temp_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py", line 50, in parse
+    return compile(source, filename, mode, flags,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: source code string cannot contain null bytes
+
+================================================================================
+
+
+================================================================================
+BUG #8 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: py_parser.getPythonAtrributeFuncs
+Input: '/var/folders/14/0_2s0shn52s0m1xs9vgxthqw0000gn/T/tmpeqr4_67z.py'
+Exception Type: ValueError
+Exception Message: source code string cannot contain null bytes
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 152, in fuzz_getPythonAttributeFuncs
+    py_tree = py_parser.getPythonParseObject(temp_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py", line 50, in parse
+    return compile(source, filename, mode, flags,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: source code string cannot contain null bytes
+
+================================================================================
+
+
+================================================================================
+BUG #9 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: py_parser.getPythonAtrributeFuncs
+Input: '/var/folders/14/0_2s0shn52s0m1xs9vgxthqw0000gn/T/tmpugmnjkov.py'
+Exception Type: ValueError
+Exception Message: source code string cannot contain null bytes
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 152, in fuzz_getPythonAttributeFuncs
+    py_tree = py_parser.getPythonParseObject(temp_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py", line 50, in parse
+    return compile(source, filename, mode, flags,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: source code string cannot contain null bytes
+
+================================================================================
+
+
+================================================================================
+BUG #10 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: lint_engine.getDataLoadCount
+Input: 123
+Exception Type: OSError
+Exception Message: [Errno 9] Bad file descriptor
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 191, in fuzz_getDataLoadCount
+    result = lint_engine.getDataLoadCount(test_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/lint_engine.py", line 13, in getDataLoadCount
+    py_tree = py_parser.getPythonParseObject(py_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+                       ^^^^^^^^^^^^^^
+OSError: [Errno 9] Bad file descriptor
+
+================================================================================
+
+
+================================================================================
+BUG #11 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: lint_engine.getDataLoadCount
+Input: 123
+Exception Type: OSError
+Exception Message: [Errno 9] Bad file descriptor
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 191, in fuzz_getDataLoadCount
+    result = lint_engine.getDataLoadCount(test_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/lint_engine.py", line 13, in getDataLoadCount
+    py_tree = py_parser.getPythonParseObject(py_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+                       ^^^^^^^^^^^^^^
+OSError: [Errno 9] Bad file descriptor
+
+================================================================================
+
+
+================================================================================
+BUG #12 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: lint_engine.getDataLoadCount
+Input: 123
+Exception Type: OSError
+Exception Message: [Errno 9] Bad file descriptor
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 191, in fuzz_getDataLoadCount
+    result = lint_engine.getDataLoadCount(test_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/lint_engine.py", line 13, in getDataLoadCount
+    py_tree = py_parser.getPythonParseObject(py_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+                       ^^^^^^^^^^^^^^
+OSError: [Errno 9] Bad file descriptor
+
+================================================================================
+
+
+================================================================================
+BUG #13 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: lint_engine.getDataLoadCount
+Input: '/var/folders/14/0_2s0shn52s0m1xs9vgxthqw0000gn/T/tmpxk1_pwso.py'
+Exception Type: ValueError
+Exception Message: source code string cannot contain null bytes
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 191, in fuzz_getDataLoadCount
+    result = lint_engine.getDataLoadCount(test_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/lint_engine.py", line 13, in getDataLoadCount
+    py_tree = py_parser.getPythonParseObject(py_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py", line 50, in parse
+    return compile(source, filename, mode, flags,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: source code string cannot contain null bytes
+
+================================================================================
+
+
+================================================================================
+BUG #14 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: lint_engine.getDataLoadCount
+Input: 123
+Exception Type: OSError
+Exception Message: [Errno 9] Bad file descriptor
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 191, in fuzz_getDataLoadCount
+    result = lint_engine.getDataLoadCount(test_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/lint_engine.py", line 13, in getDataLoadCount
+    py_tree = py_parser.getPythonParseObject(py_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+                       ^^^^^^^^^^^^^^
+OSError: [Errno 9] Bad file descriptor
+
+================================================================================
+
+
+================================================================================
+BUG #15 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: lint_engine.getDataLoadCount
+Input: 123
+Exception Type: OSError
+Exception Message: [Errno 9] Bad file descriptor
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 191, in fuzz_getDataLoadCount
+    result = lint_engine.getDataLoadCount(test_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/lint_engine.py", line 13, in getDataLoadCount
+    py_tree = py_parser.getPythonParseObject(py_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+                       ^^^^^^^^^^^^^^
+OSError: [Errno 9] Bad file descriptor
+
+================================================================================
+
+
+================================================================================
+BUG #16 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: py_parser.getFunctionAssignments
+Input: '/var/folders/14/0_2s0shn52s0m1xs9vgxthqw0000gn/T/tmp0y26jh_k.py'
+Exception Type: ValueError
+Exception Message: source code string cannot contain null bytes
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 221, in fuzz_getFunctionAssignments
+    py_tree = py_parser.getPythonParseObject(temp_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py", line 50, in parse
+    return compile(source, filename, mode, flags,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: source code string cannot contain null bytes
+
+================================================================================
+
+
+================================================================================
+BUG #17 DETECTED - 2025-11-30 09:50:54
+================================================================================
+Method: py_parser.getFunctionAssignments
+Input: '/var/folders/14/0_2s0shn52s0m1xs9vgxthqw0000gn/T/tmpveq6gqx3.py'
+Exception Type: ValueError
+Exception Message: source code string cannot contain null bytes
+
+Traceback:
+Traceback (most recent call last):
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/fuzz.py", line 221, in fuzz_getFunctionAssignments
+    py_tree = py_parser.getPythonParseObject(temp_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/elizabethcasey/Documents/OnMacDocuments/GitHub/Team50--FALL2025-SQA/fuzz.py Folder/py_parser.py", line 82, in getPythonParseObject
+    full_tree = ast.parse( open( pyFile ).read())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py", line 50, in parse
+    return compile(source, filename, mode, flags,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: source code string cannot contain null bytes
+
+================================================================================
+
+
+================================================================================
+FUZZ TESTING SUMMARY
+================================================================================
+Total Tests Run: 250
+Total Bugs Found: 17
+Duration: 0.05 seconds
+Bug Rate: 6.80%
+Completed: 2025-11-30 09:50:54
+================================================================================
