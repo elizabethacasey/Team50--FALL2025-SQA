@@ -1,0 +1,126 @@
+**COMP 5710: Team 50% Project Outline** 
+
+Elizabeth Casey, Ellie Cribbet, Avery Fox, & Jewels Wolter 
+
+December 1, 2025
+
+I.  **fuzz.py Folder**
+
+> This folder holds a fuzz testing framework designed to test the
+> MLForensics project, which is a static analysis tool for detecting
+> security and quality issues in machine learning python code. This fuzz
+> testing framework has a variety of use cases, including security
+> auditing, code quality checks, machine learning operations,
+> compliance, and robustness testing.
+>
+> The folder holds a variety of files, each with a unique purpose in the
+> fuzz testing framework. The constants.py file serves as a central
+> repository for all constants used throughout the MLForensics project.
+> This file defines keyword constants, library detection keywords,
+> forensic event categories, and the output format for forensic analysis
+> reports. The py_parser.py file is a Python Abstract Syntax Tree parser
+> that extracts code patterns from python files. The lint_engine.py file
+> serves as a pattern matching engine that executes data flow analysis
+> on ML code. These files were provided by the instructor.
+>
+> The fuzz.py file is an automated fuzz testing suite to discover bugs
+> in the MLForensics parsers. We tested the following five methods,
+> including testing the parser with malformed files, attribute function
+> extraction, data loading detection with invalid inputs, assignment
+> extraction, and import detection with malformed imports. We first
+> imported the modules we wanted to test from py_parser.py and
+> lint_engine.py. We then generated random strings, random paths, and
+> random malformed python files. We then use the randomly generated
+> inputs and test them against the five implemented methods while also
+> generating a report file. We ran 50 iterations of each method, created
+> timestamped reports of each bug. Figure 1 shows the test output.
+>
+> The test_fuzz.py file integrates pytest for the fuzz testing suite. It
+> tests five functions, including if the fuzz module can be imported,
+> tests the FuzzTester implementation, tests that the required
+> MLForensics modules are available, tests random string generation
+> utility, and executes a quick test. These methods are tested via a
+> pytest command. The test outflow is show in Figure 2. This pytest
+> integration allows us to run tests with just one command and to run
+> automatically as part of continuous integration workflows. It also
+> provides quick validation and better reporting than a standalone
+> fuzzer script.
+
+![: fuzz.py test output
+results](./reportfigures/media/image1.png){alt="A screenshot of a computer program AI-generated content may be incorrect."
+width="6.5in" height="3.4055555555555554in"}
+
+![: test_fuzz.py test output
+results](./reportfigures/media/image2.png){alt="A computer screen with white and green text AI-generated content may be incorrect."
+width="6.5in" height="2.790277777777778in"}
+
+II. **Integrating Forensics**
+
+We also integrated a forensics logging and analysis system into the
+MLForensics project. This system provides decorator-based function
+logging and statistical analysis tools for machine learning security
+event metrics. This system has several use cases, including research
+analysis, benchmarking, code quality checks, debugging, and auditing.
+
+In order to implement this system, we were provided with two files:
+frequency.py and report.py. The file frequency.py generates proportion
+and density metrics from the MLForensics analysis results. It has three
+core functions, one to count the total source lines of code across all
+python files, one to calculate the proportion of files that contain at
+least one occurrence of each event, and one to calculate the event
+density. These functions also utilized a wrapper for automatic logging
+of inputs and outputs. The file report.py aims to collect proportion and
+density metrics statistics. It has two core functions, one to compute
+the average and median proportions across repositories and one to
+compute the average and median densities across repositories. When this
+file is executed, it analyzes the three provided datasets.
+
+In order to provide function code logging in our forensic logging
+system, we first need to implement the core forensics infrastructure.
+The file forsenics.py serves to wrap functions so they automatically log
+function entry with all arguments, return values, and exceptions with
+full stack traces. The logging follows the following format: \[CALL\],
+\[RETURN\], \[EXCEPTION\] and writes to a forsenics.log file upon
+execution. Figure 3 shows an example of the logging output. The
+run_forsenics_demo.py file shows a small demonstration of the forensic
+logging system and how it works. It creates dummy files and csv files
+and runs the forensics analysis on these dummy files. The results were
+stored in the demo_outputs file. Figure 4 shows the demo results.
+
+![: forsenics.py logging output
+example](./reportfigures/media/image3.png){alt="A screenshot of a computer program AI-generated content may be incorrect."
+width="6.5in" height="2.3097222222222222in"}
+
+![: Demo analysis
+results](./reportfigures/media/image4.png){width="6.5in"
+height="0.37916666666666665in"}
+
+III. **Continuous Integration**
+
+Finally, we integrated continuous integration with GitHub Actions. The
+ci.yml file automates testing and fuzzing on every push to the main
+branch and captures output for later analysis. The file is triggered on
+pushes to the main branch, pull requests to the main branch, and can be
+manually executed with workflow-dispatch. Once triggered, the core steps
+include fetching the repository code, setting up python, installing
+dependencies, running tests, running fuzzing, and uploading artifacts.
+
+When installing dependencies, the runner upgrades pip and installs
+pytest. It also installs top level requirements.txt, if available.
+Figure 5 shows our projects requirements.txt file. To run the tests, the
+runner creates the ci-artifacts directory and executes pytest, storing
+the output in the ci-artifacts directory. To run fuzzing, the runner
+creates the ci-artifacts directory and runs the fuzzer, once again
+storing the output in the ci-artifacts directory. This step collects
+logs from the fuzzer and writes a detailed report to fuzz_report.txt.
+Figure 6 shows a snippet of this report. Additionally, both testing and
+fuzzing are allowed to fail without failing the job. Finally, we upload
+the artifacts stored in ci-artifacts as ci-results.
+
+![: Requirements.txt
+file](./reportfigures/media/image5.png){width="6.5in"
+height="0.7243055555555555in"}
+
+![: fuzz_report.txt
+example](./reportfigures/media/image6.png){alt="A screenshot of a computer AI-generated content may be incorrect."
+width="5.690475721784777in" height="2.314491469816273in"}
