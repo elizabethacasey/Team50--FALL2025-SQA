@@ -47,10 +47,10 @@ I.  **fuzz.py Folder**
 > fuzzer script.
 
 ![: fuzz.py test output
-results](./reportfigures/media/image1.png)
+results](./reportfigures/media/image1.png)*Figure 1*
 
 ![: test_fuzz.py test output
-results](./reportfigures/media/image2.png)
+results](./reportfigures/media/image2.png)*Figure 2*
 
 II. **Integrating Forensics**
 
@@ -86,10 +86,10 @@ and runs the forensics analysis on these dummy files. The results were
 stored in the demo_outputs file. Figure 4 shows the demo results.
 
 ![: forsenics.py logging output
-example](./reportfigures/media/image3.png)
+example](./reportfigures/media/image3.png)*Figure 3*
 
 ![: Demo analysis
-results](./reportfigures/media/image4.png)
+results](./reportfigures/media/image4.png)*Figure 4*
 
 III. **Continuous Integration**
 
@@ -115,7 +115,7 @@ the artifacts stored in ci-artifacts as ci-results.
 
 ![: Requirements.txt
 file](./reportfigures/media/image5.png){width="6.5in"
-height="0.7243055555555555in"}
+height="0.7243055555555555in"}*Figure 5*
 
 ![: fuzz_report.txt
-example](./reportfigures/media/image6.png)
+example](./reportfigures/media/image6.png)*Figure 6*
