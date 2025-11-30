@@ -114,8 +114,7 @@ fuzzing are allowed to fail without failing the job. Finally, we upload
 the artifacts stored in ci-artifacts as ci-results.
 
 ![: Requirements.txt
-file](./reportfigures/media/image5.png){width="6.5in"
-height="0.7243055555555555in"}*Figure 5*
+file](./reportfigures/media/image5.png)*Figure 5*
 
 ![: fuzz_report.txt
 example](./reportfigures/media/image6.png)*Figure 6*
