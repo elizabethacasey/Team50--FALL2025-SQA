@@ -4,9 +4,9 @@ Elizabeth Casey, Ellie Cribbet, Avery Fox, & Jewels Wolter 
 
 December 1, 2025
 
-I.  **fuzz.py Folder**
+I.  **Fuzzing**
 
-> This folder holds a fuzz testing framework designed to test the
+> We first created a fuzz testing framework designed to test the
 > MLForensics project, which is a static analysis tool for detecting
 > security and quality issues in machine learning python code. This fuzz
 > testing framework has a variety of use cases, including security
