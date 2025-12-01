@@ -6,54 +6,54 @@ December 1, 2025
 
 I.  **Fuzzing**
 
-> We first created a fuzz testing framework designed to test the
-> MLForensics project, which is a static analysis tool for detecting
-> security and quality issues in machine learning python code. This fuzz
-> testing framework has a variety of use cases, including security
-> auditing, code quality checks, machine learning operations,
-> compliance, and robustness testing.
->
-> The folder holds a variety of files, each with a unique purpose in the
-> fuzz testing framework. The constants.py file serves as a central
-> repository for all constants used throughout the MLForensics project.
-> This file defines keyword constants, library detection keywords,
-> forensic event categories, and the output format for forensic analysis
-> reports. The py_parser.py file is a Python Abstract Syntax Tree parser
-> that extracts code patterns from python files. The lint_engine.py file
-> serves as a pattern matching engine that executes data flow analysis
-> on ML code. These files were provided by the instructor.
->
-> The fuzz.py file is an automated fuzz testing suite to discover bugs
-> in the MLForensics parsers. We tested the following five methods,
-> including testing the parser with malformed files, attribute function
-> extraction, data loading detection with invalid inputs, assignment
-> extraction, and import detection with malformed imports. We first
-> imported the modules we wanted to test from py_parser.py and
-> lint_engine.py. We then generated random strings, random paths, and
-> random malformed python files. We then use the randomly generated
-> inputs and test them against the five implemented methods while also
-> generating a report file. We ran 50 iterations of each method, created
-> timestamped reports of each bug. Figure 1 shows the test output.
->
-> The test_fuzz.py file integrates pytest for the fuzz testing suite. It
-> tests five functions, including if the fuzz module can be imported,
-> tests the FuzzTester implementation, tests that the required
-> MLForensics modules are available, tests random string generation
-> utility, and executes a quick test. These methods are tested via a
-> pytest command. The test outflow is show in Figure 2. This pytest
-> integration allows us to run tests with just one command and to run
-> automatically as part of continuous integration workflows. It also
-> provides quick validation and better reporting than a standalone
-> fuzzer script.
->
-> One lesson learned when developing the fuzz file was that fuzzing itself
-> is more about discovering how a code breaks so you can fix it. It’s not
-> as much about proving the code works, but finding the issues with it to
-> make it better. We also learned the importance of good logging. When a bug
-> is found, it’s important to have a detailed log so a developer can find
-> exactly what went wrong and can track when and where the issues occur.
-> Each bug report for the fuzzer includes the exact input and timestamp which
-> provides everything needed to reproduce or fix any issues.
+We first created a fuzz testing framework designed to test the
+MLForensics project, which is a static analysis tool for detecting
+security and quality issues in machine learning python code. This fuzz
+testing framework has a variety of use cases, including security
+auditing, code quality checks, machine learning operations,
+compliance, and robustness testing.
+
+The folder holds a variety of files, each with a unique purpose in the
+fuzz testing framework. The constants.py file serves as a central
+repository for all constants used throughout the MLForensics project.
+This file defines keyword constants, library detection keywords,
+forensic event categories, and the output format for forensic analysis
+reports. The py_parser.py file is a Python Abstract Syntax Tree parser
+that extracts code patterns from python files. The lint_engine.py file
+serves as a pattern matching engine that executes data flow analysis
+on ML code. These files were provided by the instructor.
+
+The fuzz.py file is an automated fuzz testing suite to discover bugs
+in the MLForensics parsers. We tested the following five methods,
+including testing the parser with malformed files, attribute function
+extraction, data loading detection with invalid inputs, assignment
+extraction, and import detection with malformed imports. We first
+imported the modules we wanted to test from py_parser.py and
+lint_engine.py. We then generated random strings, random paths, and
+random malformed python files. We then use the randomly generated
+inputs and test them against the five implemented methods while also
+generating a report file. We ran 50 iterations of each method, created
+timestamped reports of each bug. Figure 1 shows the test output.
+
+The test_fuzz.py file integrates pytest for the fuzz testing suite. It
+tests five functions, including if the fuzz module can be imported,
+tests the FuzzTester implementation, tests that the required
+MLForensics modules are available, tests random string generation
+utility, and executes a quick test. These methods are tested via a
+pytest command. The test outflow is show in Figure 2. This pytest
+integration allows us to run tests with just one command and to run
+automatically as part of continuous integration workflows. It also
+provides quick validation and better reporting than a standalone
+fuzzer script.
+
+One lesson learned when developing the fuzz file was that fuzzing itself
+is more about discovering how a code breaks so you can fix it. It’s not
+as much about proving the code works, but finding the issues with it to
+make it better. We also learned the importance of good logging. When a bug
+is found, it’s important to have a detailed log so a developer can find
+exactly what went wrong and can track when and where the issues occur.
+Each bug report for the fuzzer includes the exact input and timestamp which
+provides everything needed to reproduce or fix any issues.
 
 ![: fuzz.py test output
 results](./reportfigures/media/image1.png)*Figure 1*
