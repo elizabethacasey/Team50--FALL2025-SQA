@@ -45,6 +45,15 @@ I.  **Fuzzing**
 > automatically as part of continuous integration workflows. It also
 > provides quick validation and better reporting than a standalone
 > fuzzer script.
+>
+> One lesson learned when developing the fuzz file was that fuzzing itself
+> is more about discovering how a code breaks so you can fix it. It’s not
+> as much about proving the code works, but finding the issues with it to
+> make it better. We also learned the importance of good logging. When a bug
+> is found, it’s important to have a detailed log so a developer can find
+> exactly what went wrong and can track when and where the issues occur.
+> Each bug report for the fuzzer includes the exact input and timestamp which
+> provides everything needed to reproduce or fix any issues.
 
 ![: fuzz.py test output
 results](./reportfigures/media/image1.png)*Figure 1*
@@ -85,6 +94,13 @@ logging system and how it works. It creates dummy files and csv files
 and runs the forensics analysis on these dummy files. The results were
 stored in the demo_outputs file. Figure 4 shows the demo results.
 
+One of the main problems encountered during this aspect of the project was 
+working within a multi-module codebase where each component depended on the 
+behavior of several others. Before implementing the required functionality, 
+a clear understanding was required of how data flowed across modules and 
+how each script interacted with the next. This was very different from 
+typical assignments, where work is usually isolated to a single file.
+
 ![: forsenics.py logging output
 example](./reportfigures/media/image3.png)*Figure 3*
 
@@ -112,6 +128,18 @@ logs from the fuzzer and writes a detailed report to fuzz_report.txt.
 Figure 6 shows a snippet of this report. Additionally, both testing and
 fuzzing are allowed to fail without failing the job. Finally, we upload
 the artifacts stored in ci-artifacts as ci-results.
+
+While setting up CI, there were a few issues that helped us better understand 
+how GitHub Actions works. The first problem was how strict GitHub is about 
+workflow file locations. At first, we accidentally used “workflow” instead of 
+“workflows,” so nothing showed up in the Actions tab until I corrected the 
+folder path to .github/workflows/. We also struggled a bit with YAML syntax, 
+since even small indentation mistakes can break a workflow without giving 
+clear error messages. Finally, we ran into dependency setup issues because the 
+project didn’t originally include a requirements.txt, so we had to create one 
+to ensure the runner could install everything correctly. These challenges ended 
+up being helpful, because they taught us how precise CI configurations need to be 
+and how easily small details can cause a pipeline to fail.
 
 ![: Requirements.txt
 file](./reportfigures/media/image5.png)*Figure 5*
